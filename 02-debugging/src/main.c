@@ -6,8 +6,11 @@
  * @return value indicating the length of the string
  */
 int strlen(char *str) {
-    //Implement me!
-    return 0;
+    int length = 0;
+    while (str[length] != '\0'){
+        length++;
+    }
+    return length;
 }
 
 /**
@@ -15,7 +18,7 @@ int strlen(char *str) {
  * @param str pointer to the string to print
  */
 void puts(char *str) {
-    if (str) {
+    if (!str) {
         printf("NULL pointer!\n");
         return;
     }
@@ -32,9 +35,9 @@ void puts(char *str) {
  */
 void main(void) {
     char buf[128] = {0};
-    int year = 1970;
+    int year = 2025;
 
-    *((char *) 0xB8000) = 'A';
+    *((char *) 0xB8000) = 'W';
 
     printf("Hello, world!\n");
     printf("Welcome to %s!\n", OS_NAME);

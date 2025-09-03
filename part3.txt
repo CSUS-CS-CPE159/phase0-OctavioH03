@@ -1,0 +1,65 @@
+19:41:17 $ git clone git@github.com:CSUS-CS-CPE159/phase0-OctavioH03.git
+Cloning into 'phase0-OctavioH03'...
+Enter passphrase for key '/home/spede/.ssh/id_ed25519': 
+remote: Enumerating objects: 10, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 10 (delta 0), reused 0 (delta 0), pack-reused 6 (from 1)
+Receiving objects: 100% (10/10), done.
+19:46:41 $ cd phase0-OctavioH03/01-hello-world
+-[spede] ~/phase0-OctavioH03/01-hello-world {main %=}
+22:15:06 $ make
+Done linking "build/NanOS.dli" (with GDB enabled) at 1m.
+-[spede] ~/phase0-OctavioH03/01-hello-world {main %=}
+22:15:40 $ ls build/NanOS.dli
+build/NanOS.dli
+-[spede] ~/phase0-OctavioH03/01-hello-world {main *%=}
+22:16:47 $ spede-target
+Launching SPEDE target to run in the background
+-[spede] ~/phase0-OctavioH03/01-hello-world {main %=}
+22:17:41 $ spede-target -q
+The SPEDE Target has quit. Exiting...
+-[spede] ~/phase0-OctavioH03/01-hello-world {main %=}
+22:18:19 $ spede-target
+Launching SPEDE target to run in the background
+-[spede] ~/phase0-OctavioH03/01-hello-world {main %=}
+22:19:05 $ make
+Done linking "build/NanOS.dli" (with GDB enabled) at 1m.
+-[spede] ~/phase0-OctavioH03/01-hello-world {main %=}
+22:19:54 $ spede-run
+The SPEDE Target will be reset, are you sure? (y/n) y
+Resetting the SPEDE Target...
+Downloading image 'build/NanOS.dli' to SPEDE Target via /dev/pts/2...
+File type is 'ELF'
+Total blocks to download:  0x8a  (128 bytes each)
+
+Load Successful ; Code loaded at 0x0x101000 (844 bytes/sec)
+Executing the image 'build/NanOS.dli' on the SPEDE Target
+-[spede] ~/phase0-OctavioH03/01-hello-world {main %=}
+22:21:05 $ spede-run -d
+The SPEDE Target will be reset, are you sure? (y/n) y
+Resetting the SPEDE Target...
+Downloading image 'build/NanOS.dli' to SPEDE Target via /dev/pts/2...
+File type is 'ELF'
+Total blocks to download:  0x8a  (128 bytes each)
+
+Load Successful ; Code loaded at 0x0x101000 (844 bytes/sec)
+Executing the image 'build/NanOS.dli' on the SPEDE Target with GDB Enabled
+Launching GDB...
+Reading symbols from build/NanOS.dli...
+Expanding full symbols from build/NanOS.dli...
+Remote debugging using /dev/pts/2
+0x0010255d in breakpoint ()
+Temporary breakpoint 1 at 0x101183: file src/hello.c, line 5.
+
+Temporary breakpoint 1, main () at src/hello.c:5
+5           printf("Hello, world!\n");
+SPEDE GDB$ c
+Continuing.
+Hello, world!
+Welcome to NanOS!
+[Inferior 1 (Remote target) exited normally]
+SPEDE GDB$ quit
+-[spede] ~/phase0-OctavioH03/01-hello-world {main %=}
+22:23:50 $ spede-target -q
+The SPEDE Target has quit. Exiting...
